@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CarouselItemsController;
 use App\Http\Controllers\Api\StudentController;
+use App\Http\Controllers\PromptController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -40,6 +41,11 @@ Route::get('/student/{id}',[StudentController::class, 'show']);
 Route::post('/student',[StudentController::class, 'store']);
 Route::put('/student/{id}',[StudentController::class, 'update']);
 Route::delete('/student/{id}',[StudentController::class, 'destroy']);
+
+Route::get('/prompts', [PromptController::class, 'index']);
+Route::get('/prompts/{id}',[PromptController::class, 'show']);
+Route::post('/prompts',[PromptController::class, 'store']);
+Route::delete('/prompts/{id}',[PromptController::class, 'destroy']);
 
 
 
